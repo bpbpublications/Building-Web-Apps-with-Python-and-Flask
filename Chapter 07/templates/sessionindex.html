@@ -1,0 +1,12 @@
+<!doctype html>
+<!--index.html for sessionexample-->
+<html>
+<body style="background-image: url({{bgfile+'.png'}});background-repeat: no-repeat;
+    background-attachment: fixed;  background-size: cover;">
+<h1>Flask session Example</h1>
+<p>
+      current Background is: {{bgfile|replace('/static/','')}}
+<a href="/changebg">
+<h3>Click here to change </a></h3></p>
+</body>
+</html>

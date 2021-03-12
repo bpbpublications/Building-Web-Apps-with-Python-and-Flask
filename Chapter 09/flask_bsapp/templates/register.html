@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+ 
+<body>
+
+  <h2 style="text-align: center;">Registration Form</h2>
+
+{% for message in form.student.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+{% for message in form.email.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+
+<form action="http://localhost:5000/register" method=post>
+  <fieldset>
+  <legend>Registration Form</legend>
+    {{ form.hidden_tag() }}
+ <div style=font-size:20px;margin-left:150px;>
+<table>
+<tr>
+<td>{{ form.student.label }}</td><td>{{ form.student }}</td>
+</tr>
+<tr>
+<td>{{ form.Gender.label }} </td>
+{% for subfield in form.Gender %}
+<td>{{ subfield }}{{ subfield.label }}</td>
+{% endfor %}
+</tr>
+<tr>
+<td>{{ form.email.label }}</td><td>{{ form.email }}</td>
+</tr>
+<tr>
+<td>{{ form.mobile.label }}</td><td>{{ form.mobile }}</td>
+</tr>
+<tr>
+<td>{{ form.course.label }}</td><td>{{ form.course }}</td>
+</tr>
+<tr>
+<td>{{ form.submit }}</td>
+</div>
+</table>
+</fieldset>
+</form>
+
+</body>
+</html>

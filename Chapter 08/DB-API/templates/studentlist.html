@@ -1,0 +1,45 @@
+<html>
+<head>
+	<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+      {%- for  message in get_flashed_messages() %}
+      
+        {{ message }}
+      
+      {%- endfor %}
+	<table> 
+	<caption align="top">
+    <h2>Admission List</h2>
+	<h3>(<a href="{{ url_for('register') }}">Add Student</a>)</h3>
+  </caption>
+		<thead>
+			<tr>
+			<th>Name</th>
+			<th>Gender</th>
+			<th>Course</th>
+			<th>Mobile</th>
+			<th>User name</th>
+			<th>Edit</th>
+			<th>Delete</th>
+			</tr>
+		</thead>
+
+		<tbody>
+		
+		{% for row in students %}
+		<tr>
+		<td>{{ row['name'] }}</td>
+		<td>{{ row['gender'] }}</td>
+		<td>{{ row['course'] }}</td>
+		<td>{{ row['mobile'] }}</td>
+		<td>{{ row['username'] }}</td>
+		<td><a href="{{ url_for('show', username=row['username']) }}">edit</a></td>
+		<td><a href="{{ url_for('delrec', username=row['username']) }}">delete</a></td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>

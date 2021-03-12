@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<body>
+
+{% extends 'bootstrap/base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<form action="http://localhost:5000/contact" method=post>
+  <fieldset>
+  <legend style=text-align:center;>Contact Form</legend>
+    {{ form.hidden_tag() }}
+ <div style=font-size:20px;font-weight:bold;margin-left:50px;>
+    {{ form.name.label }}:{{ form.name }}
+ <br>
+     {{ form.Gender.label }} {{ form.Gender }}
+
+	{{ form.Address.label }}: {{ form.Address }}
+ <br>
+    {{ form.email.label }}: {{ form.email }}
+ <br>
+    {{ form.Age.label }}: {{ form.Age }}
+ <br>
+   {{ form.language.label }} : {{ form.language }}
+ <br> 
+    {{ form.submit }}
+	</div>
+	</fieldset>
+  </form>
+
+{% endblock %}
+
+</body>
+</html>

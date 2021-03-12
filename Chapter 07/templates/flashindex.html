@@ -1,0 +1,29 @@
+<!doctype html>
+<!--login.html for flash example-->
+<html>
+<head>
+<style>
+      p {background-color:grey; font-size: 150%}
+</style>
+</head>
+<body>
+<h1>Flask Message Flashing Example</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+<p>{{category}} : {{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+<h3>Login Form</h3>
+<form action="" method="POST">
+<dl>
+<dt>Username:
+<dd><input type="text" name="username">
+<dt>Password:
+<dd><input type="password" name="password">
+</dl>
+<input type="submit" value="Login">
+</form>
+</body>
+</html>

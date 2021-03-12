@@ -1,0 +1,44 @@
+<html>
+<head>
+	<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+      {% for  message in get_flashed_messages() %}
+      
+        {{ message }}
+      
+      {% endfor %}
+	<table> 
+	<caption align="top">
+    <h2>Book List</h2>
+	<h3>(<a href="{{ url_for('new') }}">Add Book</a>)</h3>
+  </caption>
+  <thead>
+          <tr>
+            <th>BookID</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Publisher</th>
+			<th>Price</th>
+			<th>Edit</th>
+			<th>Delete</th>
+          </tr>
+	</thead>
+	<tbody>
+          {% for book in books %}
+          <tr>
+            <td>{{ book.bookID }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.category }}</td>
+            <td>{{ book.publisher }}</td>
+			<td>{{ book.price }}</td>
+			<td><a href="{{ url_for('show', bookid= book.bookID) }}">edit</a></td>
+			<td><a href="{{ url_for('delrec',bookid=book.bookID) }}">delete</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+   
+  </body>
+</html>

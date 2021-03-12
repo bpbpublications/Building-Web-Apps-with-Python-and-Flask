@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 align="center">Registration Form</h2>
+<form action="/edit" method="POST">
+<table align="center">
+<tr>
+<td><strong>Name</strong> : </td>
+<td><input type="text" name="name" value="{{ student[0] }}"/></td>
+</tr>
+<tr>
+<td><strong>Gender</strong> : </td>
+<td><input type = "radio" name = "gender" value = "Male" checked="checked" /> Male
+   <input type = "radio" name = "gender" value = "Female" /> Female</td>
+ </tr>
+ <tr>
+<td><strong>Choose a course</strong> : </td>
+<td><select name = "course">
+      <option value = "Python with Flask" selected>Python With Flask</option>
+      <option value = "Advanced Java">Advanced Java</option>
+	  <option value = "C/C++">C/C++</option>
+	  <option value = "Data Science">Data Science</option>
+   </select>   </td>
+   </tr>
+ <tr>
+<td><strong>Mobile</strong> : </td> 
+<td><input type="text" name="mobile" value="{{ student[3] }}"></td>
+</tr>
+<tr>
+<td><strong>User name</strong> : </td> 
+<td><input type="text" name="User" value="{{ student[4] }}"></td>
+</tr>
+<tr>
+<td><input type="submit" value="Submit"/></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

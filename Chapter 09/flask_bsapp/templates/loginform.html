@@ -1,0 +1,10 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+<form action="http://localhost:5000/success" method="post">
+{% block content %}
+<div style="margin:3%;>
+{{ wtf.quick_form(form) }} 
+{% endblock %}
+</div>
+</form>

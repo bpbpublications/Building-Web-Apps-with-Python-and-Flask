@@ -1,0 +1,30 @@
+<html>
+<head>
+	<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<table> 
+	<caption align="top">
+    <h2>List of Books</h2>
+  </caption>
+		<thead>
+			<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Name of Student</th>
+			<th>Mobile</th>
+			</tr>
+		</thead>  
+	<tbody>
+          {% for book,student in rows %}
+          <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.mobile }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+</table>
+</body>
+</html>

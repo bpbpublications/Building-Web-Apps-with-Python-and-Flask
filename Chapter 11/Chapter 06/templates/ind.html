@@ -1,0 +1,25 @@
+<!-- rename as index.html -->
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Marks</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in marks %}
+    <tr>
+      <td>{{ row['Name'] }}</td>
+      <td>{{ row['Marks'] }}</td>
+      <td>
+        {% if row['Marks']>=50 %}
+        <div>Pass</div>
+        {% else %}
+        <div style="text-decoration:underline;">Fail</div>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

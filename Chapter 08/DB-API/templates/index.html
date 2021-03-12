@@ -1,0 +1,11 @@
+<html>
+    <head>
+	<title>My Website</title>
+	<script src="{{ url_for('static', filename='hello.js') }}"></script>
+    </head>
+    <body onload="myFunction()">
+	<div id="time" style="text-align:right; width="100%"></div>
+	<h1><div id="txt">{{ title }}</div></h1>
+    </body>
+</html>
+

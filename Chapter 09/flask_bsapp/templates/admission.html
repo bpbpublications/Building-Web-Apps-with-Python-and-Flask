@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+ 
+<body>
+
+  <h2 style="text-align: center;">Registration Form</h2>
+
+{% for message in form.student.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+{% for message in form.userID.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+{% for message in form.dob.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+{% for message in form.percent.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+{% for message in form.pwd.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+
+<form action="http://localhost:5000/admission" method=post>
+  <fieldset>
+  <legend>Admission Form</legend>
+    {{ form.hidden_tag() }}
+ <div style=font-size:20px;margin-left:150px;>
+<table>
+<tr>
+<td>{{ form.student.label }}</td><td>{{ form.student }}</td>
+</tr>
+<tr>
+<td>{{ form.Gender.label }} </td>
+{% for subfield in form.Gender %}
+<td>{{ subfield }}{{ subfield.label }}</td>
+{% endfor %}
+</tr>
+<tr>
+<td>{{ form.dob.label }}</td><td>{{ form.dob }}</td>
+</tr>
+<tr>
+<td>{{ form.percent.label }}</td><td>{{ form.percent }}</td>
+</tr>
+<tr>
+<td>{{ form.branch.label }}</td><td>{{ form.branch }}</td>
+</tr>
+<tr>
+<td>{{ form.userID.label }}</td><td>{{ form.userID }}</td>
+</tr>
+<tr>
+<td>{{ form.pwd.label }}</td><td>{{ form.pwd }}</td>
+</tr>
+<tr>
+<td>{{ form.confirm.label }}</td><td>{{ form.confirm }}</td>
+</tr>
+<tr>
+<td>{{ form.submit }}</td>
+</div>
+</table>
+</fieldset>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+	<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+
+	<table> 
+	<caption align="top">
+    <h2>Admission List</h2>
+  </caption>
+		<thead>
+			<tr>
+			<th>Name</th>
+			<th>Gender</th>
+			<th>Course</th>
+			<th>Mobile</th>
+			<th>User name</th>
+			<th>Password</th>
+			</tr>
+		</thead>
+
+		<tbody>
+		{% for row in students %}
+		<tr>
+		<td>{{ row['Name'] }}</td>
+		<td>{{ row['Gender'] }}</td>
+		<td>{{ row['Course'] }}</td>
+		<td>{{ row['Mobile'] }}</td>
+		<td>{{ row['Username'] }}</td>
+		<td>{{ row['Password'] }}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
